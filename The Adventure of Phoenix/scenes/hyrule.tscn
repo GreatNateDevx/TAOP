@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://4n05va6k6akm"]
+
+[ext_resource type="PackedScene" uid="uid://cpve8dtclf6xl" path="res://scenes/sam.tscn" id="1_ncaeq"]
+[ext_resource type="PackedScene" uid="uid://kca8lxtbyjad" path="res://scenes/chuchu.tscn" id="2_gnplr"]
+[ext_resource type="PackedScene" uid="uid://dc76n0f2cvtkf" path="res://scenes/inv.tscn" id="2_wc63s"]
+[ext_resource type="PackedScene" uid="uid://b07803kmkg5sc" path="res://scenes/heart.tscn" id="3_avtqd"]
+
+[node name="hyrule" type="Node2D"]
+
+[node name="pauseing" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="pauseing"]
+z_index = -1
+offset_right = 1971.0
+offset_bottom = 1159.0
+color = Color(0.140014, 0.571482, 0, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="pauseing/ColorRect"]
+visible = false
+color = Color(0.493545, 0.493546, 0.493545, 1)
+
+[node name="sam" parent="pauseing" instance=ExtResource("1_ncaeq")]
+position = Vector2(480, 478)
+
+[node name="Camera2D" type="Camera2D" parent="pauseing/sam"]
+zoom = Vector2(3, 3)
+
+[node name="chuchu" parent="pauseing" instance=ExtResource("2_gnplr")]
+
+[node name="Heart" parent="pauseing" instance=ExtResource("3_avtqd")]
+position = Vector2(70, 155)
+
+[node name="main" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Inv" parent="main" instance=ExtResource("2_wc63s")]
+visible = false
+offset_left = 670.0
+offset_top = 257.0
+offset_right = 670.0
+offset_bottom = 257.0

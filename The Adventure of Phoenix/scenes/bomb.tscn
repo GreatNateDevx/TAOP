@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctmob7c1tugek"]
+
+[ext_resource type="Script" path="res://scripts/bomb.gd" id="1_lu8os"]
+[ext_resource type="Texture2D" uid="uid://x3r3d45dojsm" path="res://assets/icon.svg" id="2_sjq6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esej7"]
+radius = 80.399
+
+[node name="bomb" type="Node2D"]
+z_index = 10
+script = ExtResource("1_lu8os")
+
+[node name="explosion" type="Area2D" parent="."]
+
+[node name="explosionshape" type="CollisionShape2D" parent="explosion"]
+shape = SubResource("CircleShape2D_esej7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sjq6f")
+
+[connection signal="body_entered" from="explosion" to="." method="_on_explosion_body_entered"]

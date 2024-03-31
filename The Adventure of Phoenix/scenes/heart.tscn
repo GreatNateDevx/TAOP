@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b07803kmkg5sc"]
+
+[ext_resource type="Script" path="res://scripts/Heart.gd" id="1_6yesi"]
+[ext_resource type="Texture2D" uid="uid://dxtwoppt8l2cs" path="res://assets/tileset 1.png" id="2_c1p07"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qtkxc"]
+radius = 4.28571
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmnbs"]
+atlas = ExtResource("2_c1p07")
+region = Rect2(175.548, 40.3762, 14.7208, 14.4871)
+
+[node name="Heart" type="Node2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_6yesi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qtkxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gmnbs")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

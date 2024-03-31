@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://kca8lxtbyjad"]
+
+[ext_resource type="Script" path="res://scripts/chuchu.gd" id="1_utns8"]
+[ext_resource type="Texture2D" uid="uid://dxtwoppt8l2cs" path="res://assets/tileset 1.png" id="2_mggea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig17p"]
+atlas = ExtResource("2_mggea")
+region = Rect2(260, 68, 23, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yfuv"]
+atlas = ExtResource("2_mggea")
+region = Rect2(280, 68, 28, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8p3n"]
+atlas = ExtResource("2_mggea")
+region = Rect2(237, 68, 23, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0amw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig17p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yfuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8p3n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgaf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fktrb"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wstfu"]
+size = Vector2(30.5, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn2tt"]
+size = Vector2(30.5, 29)
+
+[node name="chuchu" type="CharacterBody2D"]
+script = ExtResource("1_utns8")
+
+[node name="chuchusprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d0amw")
+autoplay = "default"
+frame_progress = 0.966394
+
+[node name="ProgressBar" type="ProgressBar" parent="chuchusprite"]
+offset_left = -19.0
+offset_top = 19.0
+offset_right = 110.0
+offset_bottom = 46.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/fill = SubResource("StyleBoxFlat_cgaf2")
+value = 100.0
+show_percentage = false
+
+[node name="chuchucoillsion" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fktrb")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-0.25, 0.25)
+shape = SubResource("RectangleShape2D_wstfu")
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-0.25, 0.5)
+shape = SubResource("RectangleShape2D_qn2tt")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

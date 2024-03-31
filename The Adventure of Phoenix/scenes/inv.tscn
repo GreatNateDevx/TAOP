@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dc76n0f2cvtkf"]
+
+[node name="Inv" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8.07647, 9.80785)
+
+[node name="Box" type="Line2D" parent="."]
+points = PackedVector2Array(0, -1, 68, -1)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box2" type="Line2D" parent="."]
+position = Vector2(0, 61)
+points = PackedVector2Array(0, -1, 68, -1)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box7" type="Line2D" parent="."]
+position = Vector2(0, 20)
+points = PackedVector2Array(0, -1, 68, -1)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box8" type="Line2D" parent="."]
+position = Vector2(0, 41)
+points = PackedVector2Array(0, -1, 68, -1)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box3" type="Line2D" parent="."]
+position = Vector2(-6.73533e-07, 61.5001)
+rotation = -1.5708
+scale = Vector2(0.944089, 1)
+points = PackedVector2Array(0, -1, 67.8011, -0.999997)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box5" type="Line2D" parent="."]
+position = Vector2(23, 61.5001)
+rotation = -1.5708
+scale = Vector2(0.944089, 1)
+points = PackedVector2Array(0, -1, 67.8011, -0.999997)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box6" type="Line2D" parent="."]
+position = Vector2(48, 61.5001)
+rotation = -1.5708
+scale = Vector2(0.944089, 1)
+points = PackedVector2Array(0, -1, 67.8011, -0.999997)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
+
+[node name="Box4" type="Line2D" parent="."]
+position = Vector2(70, 61.5001)
+rotation = -1.5708
+scale = Vector2(0.944089, 1)
+points = PackedVector2Array(0, -1, 67.8011, -0.999997)
+width = 3.0
+default_color = Color(0.483128, 0.541657, 0.595878, 1)
